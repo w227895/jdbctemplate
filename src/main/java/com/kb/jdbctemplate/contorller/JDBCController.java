@@ -5,6 +5,8 @@ import com.kb.jdbctemplate.service.JDBCRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @description:
  * @Author: kb
@@ -19,6 +21,11 @@ public class JDBCController {
     @GetMapping(value="/jdbc_tests/{id}")
     public Weather testList(@PathVariable("id") Integer id){
         return jdbcRepository.getWeather(id);
+    }
+
+    @GetMapping(value="/jdbc_tests")
+    public List<Weather> testList(){
+        return jdbcRepository.getWeather();
     }
 
     @PostMapping(value="/jdbc_tests")

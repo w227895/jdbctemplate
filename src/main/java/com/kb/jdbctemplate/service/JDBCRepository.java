@@ -40,4 +40,9 @@ public class JDBCRepository {
         return null;
     }
 
+    public List<Weather> getWeather() {
+        List<Weather> list = jdbcTemplate.query("select * from website_jdbc" , new BeanPropertyRowMapper(Weather.class));
+        return list;
+    }
+
 }
