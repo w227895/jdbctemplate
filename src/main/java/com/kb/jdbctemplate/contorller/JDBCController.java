@@ -16,22 +16,22 @@ public class JDBCController {
     @Autowired
     private JDBCRepository jdbcRepository;
 
-    @GetMapping(value="/get/{id}")
+    @GetMapping(value="/jdbc_tests/{id}")
     public Weather testList(@PathVariable("id") Integer id){
         return jdbcRepository.getWeather(id);
     }
 
-    @PostMapping(value="/add")
+    @PostMapping(value="/jdbc_tests")
     public void testAdd(@RequestParam("id")Integer id, @RequestParam("name")String name, @RequestParam("url")String url){
         jdbcRepository.createWeather(id,name,url);
     }
 
-    @PutMapping(value="/update/{id}")
+    @PutMapping(value="/jdbc_tests/{id}")
     public void testUpdate(@PathVariable("id") Integer id,@RequestParam("name")String name,@RequestParam("url")String url){
         jdbcRepository.updateWeather(id, name, url);
     }
 
-    @DeleteMapping(value="/delete/{id}")
+    @DeleteMapping(value="/jdbc_tests/{id}")
     public void testDelete(@PathVariable("id") Integer id){
         jdbcRepository.deleteWeather(id);
     }

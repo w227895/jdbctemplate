@@ -6,4 +6,4 @@ spring:
     username: root
     password: root
     # 可省略
-    driver-class-name: com.mysql.jdbc.Driver
+    #driver-class-name: com.mysql.jdbc.Driver
