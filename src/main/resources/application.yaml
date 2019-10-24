@@ -1,0 +1,9 @@
+# 配置MySQL数据源
+spring:
+  datasource:
+    # 注意：MySQL连接驱动和版本都是8.0以上需要添加时区：serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    # 可省略
+    driver-class-name: com.mysql.jdbc.Driver
